@@ -1,0 +1,24 @@
+{
+  "inputs": {
+    "EmpId": "Enter the Emp ID",
+    "EmpName": "Enter the Name",
+    "EmpAge": "Enter the EMP Age"
+  },
+  "Values": [
+    {
+      "Id": null,
+      "Name": null,
+      "Age": null
+    },
+    {
+      "Id": "101",
+      "Name": "rohya",
+      "Age": "33"
+    },
+    {
+      "Id": "1212",
+      "Name": "kkkkk",
+      "Age": "23"
+    }
+  ]
+}
