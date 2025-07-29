@@ -1,10 +1,8 @@
-﻿using EmployDetailes.Leave_Management;
+﻿using System;
+using EmployDetailes.Employee_Project.EmployeLogin;
+using EmployDetailes.Employee_Project.LeaveData;
+using EmployDetailes.Leave_Management;
 using EmployDetailes.NewFolder;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmployDetailes.Company
 {
@@ -12,31 +10,77 @@ namespace EmployDetailes.Company
     {
         public static void Main(string[] args)
         {
-            //Console.ForegroundColor= ConsoleColor.DarkRed;
-            Console.WriteLine("1.join the company");
-            Console.WriteLine("2.viwe detalis");
-            Console.WriteLine("3.Request leave");
-            String intput;
-            
-            EmpLogin log = new EmpLogin();
-            CheckDetails Chkdata = new CheckDetails();
+            string[] options = {
+                "Join the company",
+                "View details",
+                "Request leave",
+                "Exit"
+            };
 
-            int c;
-            c = Convert.ToInt32(Console.ReadLine());
-            switch(c)
+            int selectedIndex = 0;
+            ConsoleKey key;
+
+            do
             {
-                case 1:
-                    Console.WriteLine("Well come to the company");
+                Console.Clear();
+                Console.WriteLine("Use UP and DOWN arrows to navigate and Enter to select:\n");
+
+                for (int i = 0; i < options.Length; i++)
+                {
+                    if (i == selectedIndex)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.Write("→ ");
+                    }
+                    else
+                    {
+                        Console.Write("  ");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                    }
+
+                    Console.WriteLine(options[i]);
+                }
+
+                ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+                key = keyInfo.Key;
+
+                if (key == ConsoleKey.UpArrow)
+                {
+                    selectedIndex = (selectedIndex - 1 + options.Length) % options.Length;
+                }
+                else if (key == ConsoleKey.DownArrow)
+                {
+                    selectedIndex = (selectedIndex + 1) % options.Length;
+                }
+
+            }
+            while (key != ConsoleKey.Enter);
+
+            Console.ResetColor();
+            Console.Clear();
+            Logindata log = new Logindata();
+            CheckDetails Chkdata = new CheckDetails();
+            Leave leave = new Leave();
+            switch (selectedIndex)
+            {
+                case 0:
+                    Console.WriteLine("Welcome to the company!");
                     log.login();
                     break;
-                case 2:
-                    Console.WriteLine("enter Id to view the detalis");
+                case 1:
+                    Console.WriteLine("Enter ID to view the details:");
                     Chkdata.CheckData();
                     break;
-                case 3:
-                    Console.WriteLine("Ask a leave");
+                case 2:
+                    Console.WriteLine("Enter your ID to verify:");
+                    leave.RequesrLeave();
                     break;
+                case 3:
+                    Console.WriteLine("Exiting...");
+                    return;
             }
+            Console.WriteLine("\nPress any key to exit...");
+            Console.ReadKey();
         }
     }
 }

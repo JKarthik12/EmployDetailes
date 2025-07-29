@@ -3,13 +3,8 @@
     "EmpId": "Enter the Emp ID",
     "EmpName": "Enter the Name",
     "EmpAge": "Enter the EMP Age"
-  },
-  "Values": [
-    {
-      "Id": null,
-      "Name": null,
-      "Age": null
     },
+  "Values": [
     {
       "Id": "101",
       "Name": "rohya",
@@ -19,6 +14,57 @@
       "Id": "1212",
       "Name": "kkkkk",
       "Age": "23"
+    },
+    {
+      "Id": "909",
+      "Name": "happy",
+      "Age": "23"
+    },
+    {
+      "Id": "109",
+      "Name": "J karthik",
+      "Age": "24"
+    },
+    {
+      "Id": "1",
+      "Name": "fffff",
+      "Age": "45"
+    },
+    {
+      "Id": "1",
+      "Name": "2dfx",
+      "Age": "90"
+    },
+    {
+      "Id": "123456",
+      "Name": "karthikkiu",
+      "Age": "21"
+    }
+  ],
+  "leave": [
+    {
+      "Id": "101",
+      "reason": "sick leave"
+    },
+    {
+      "Id": "909",
+      "reason": "iam not well"
+    },
+    {
+      "Id": "909",
+      "reason": "iam sick its my wish ill not come "
+    },
+    {
+      "Id": "909",
+      "reason": "iandjfa"
+    },
+    {
+      "Id": "1",
+      "reason": "hogo lwde"
+    },
+    {
+      "Id": "123456",
+      "reason": "have something"
     }
   ]
 }

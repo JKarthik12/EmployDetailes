@@ -13,6 +13,7 @@ namespace EmployDetailes.Leave_Management
     {
         public void CheckData()
         {
+
             string Data = File.ReadAllText(@"C:\Users\VSOFT\source\repos\EmployDetailes\EmployDetailes\DataBase.json");
             Data d = JsonConvert.DeserializeObject<Data>(Data);
 
@@ -24,7 +25,7 @@ namespace EmployDetailes.Leave_Management
                 {
                     Console.WriteLine("Name: " + item.Name + "\n" + "Age : " + item.Age);
                 }
-                //Console.WriteLine("Name: " + item.Name + "\n" + "Age : " + item.EmpAge);
+                
             }
         }
     }
