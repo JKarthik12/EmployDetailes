@@ -25,7 +25,12 @@ namespace EmployDetailes.Leave_Management
                 {
                     Console.WriteLine("Name: " + item.Name + "\n" + "Age : " + item.Age);
                 }
+                
             }
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+            Console.Clear();
+            EmployeeMenu.Run();
         }
     }
 }

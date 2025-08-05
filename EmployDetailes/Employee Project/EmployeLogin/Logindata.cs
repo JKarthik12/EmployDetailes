@@ -49,12 +49,14 @@ namespace EmployDetailes.Employee_Project.EmployeLogin
                 Console.WriteLine("re enter");
             }
 
-
-
             dd.Values.Add(v);
             String finl = JsonConvert.SerializeObject(dd, Formatting.Indented);
             File.WriteAllText(Jsonloc, finl);
             Console.WriteLine("Pleaas do not forget your ID");
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+            Console.Clear();
+            EmployeeMenu.Run();
         }
     }
 }

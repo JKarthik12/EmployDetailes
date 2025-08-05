@@ -2,8 +2,9 @@
   "inputs": {
     "EmpId": "Enter the Emp ID",
     "EmpName": "Enter the Name",
-    "EmpAge": "Enter the EMP Age"
-    },
+    "EmpAge": "Enter the EMP Age",
+    "Inputs": null
+  },
   "Values": [
     {
       "Id": "101",
@@ -29,12 +30,46 @@
       "Id": "1234",
       "Name": "bhagya",
       "Age": "24"
+    },
+    {
+      "Id": "1001",
+      "Name": "ramprasad",
+      "Age": "24"
+    },
+    {
+      "Id": "1002",
+      "Name": "papu",
+      "Age": "23"
+    },
+    {
+      "Id": "1003",
+      "Name": "daada",
+      "Age": "23"
+    },
+    {
+      "Id": "1004",
+      "Name": "damadam",
+      "Age": "24"
+    },
+    {
+      "Id": "1005",
+      "Name": "243",
+      "Age": "12"
+    },
+    {
+      "Id": "1006",
+      "Name": "pop",
+      "Age": "45"
     }
   ],
   "leave": [
     {
       "Id": "101",
       "reason": "sick leave"
+    },
+    {
+      "Id": "1001",
+      "reason": "iam not well"
     }
   ]
 }

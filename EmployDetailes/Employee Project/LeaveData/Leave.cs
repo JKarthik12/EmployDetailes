@@ -45,6 +45,10 @@ namespace EmployDetailes.Employee_Project.LeaveData
             ll.leave.Add(leaveDb);
             String leaveData = JsonConvert.SerializeObject(ll, Formatting.Indented);
             File.WriteAllText(Jsonloc, leaveData);
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+            Console.Clear();
+            EmployeeMenu.Run();
         }
 
     }
