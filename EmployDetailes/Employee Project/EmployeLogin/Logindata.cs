@@ -48,6 +48,9 @@ namespace EmployDetailes.Employee_Project.EmployeLogin
             {
                 Console.WriteLine("re enter");
             }
+
+
+
             dd.Values.Add(v);
             String finl = JsonConvert.SerializeObject(dd, Formatting.Indented);
             File.WriteAllText(Jsonloc, finl);
