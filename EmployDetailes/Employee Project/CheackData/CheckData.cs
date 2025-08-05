@@ -25,7 +25,6 @@ namespace EmployDetailes.Leave_Management
                 {
                     Console.WriteLine("Name: " + item.Name + "\n" + "Age : " + item.Age);
                 }
-                
             }
         }
     }
