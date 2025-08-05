@@ -1,10 +1,8 @@
-﻿using EmployDetailes.Leave_Management;
+﻿using System;
+using EmployDetailes.Employee_Project.EmployeLogin;
+using EmployDetailes.Employee_Project.LeaveData;
+using EmployDetailes.Leave_Management;
 using EmployDetailes.NewFolder;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmployDetailes.Company
 {
@@ -12,31 +10,68 @@ namespace EmployDetailes.Company
     {
         public static void Main(string[] args)
         {
-            //Console.ForegroundColor= ConsoleColor.DarkRed;
-            Console.WriteLine("1.join the company");
-            Console.WriteLine("2.viwe detalis");
-            Console.WriteLine("3.Request leave");
-            String intput;
             
-            EmpLogin log = new EmpLogin();
-            CheckDetails Chkdata = new CheckDetails();
-
-            int c;
-            c = Convert.ToInt32(Console.ReadLine());
-            switch(c)
+            string[] options = {
+                "Join the company",
+                "View details",
+                "Request leave",
+                "Exit"
+            };
+                int selectedIndex = 0;
+                ConsoleKey key;
+                Console.WriteLine("Use UP and DOWN arrows to navigate and Enter to select:\n");
+                int menuTop = Console.CursorTop;
+            do
             {
-                case 1:
-                    Console.WriteLine("Well come to the company");
+                Console.SetCursorPosition(0, menuTop);
+                for (int i = 0; i < options.Length; i++)
+                {
+                    Console.SetCursorPosition(0, menuTop + i); 
+                    Console.ForegroundColor = i == selectedIndex ? ConsoleColor.Red : ConsoleColor.Yellow;
+                    string prefix = i == selectedIndex ? "→ " : "  ";
+                    string paddedText = prefix + options[i] + new string(' ', Console.WindowWidth - prefix.Length - options[i].Length);
+                    Console.Write(paddedText);
+                }
+                ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+                key = keyInfo.Key;
+                if (key == ConsoleKey.UpArrow)
+                {
+                    selectedIndex = (selectedIndex - 1 + options.Length) % options.Length;
+                }
+                else if (key == ConsoleKey.DownArrow)
+                {
+                    selectedIndex = (selectedIndex + 1) % options.Length;
+                }
+            }
+            while (key != ConsoleKey.Enter);
+            Console.ResetColor();
+            Console.Clear();
+            while (key != ConsoleKey.Enter);
+            Console.ResetColor();
+            Console.Clear();
+            Logindata log = new Logindata();
+            CheckDetails Chkdata = new CheckDetails();
+            Leave leave = new Leave();
+            switch (selectedIndex)
+            {
+                case 0:
+                    Console.WriteLine("Welcome to the company!");
                     log.login();
                     break;
-                case 2:
-                    Console.WriteLine("enter Id to view the detalis");
+                case 1:
+                    Console.WriteLine("Enter ID to view the details:");
                     Chkdata.CheckData();
                     break;
-                case 3:
-                    Console.WriteLine("Ask a leave");
+                case 2:
+                    Console.WriteLine("Enter your ID to verify:");
+                    leave.RequesrLeave();
                     break;
+                case 3:
+                    Console.WriteLine("Exiting...");
+                    return;
             }
+            Console.WriteLine("\nPress any key to exit...");
+            Console.ReadKey();
         }
     }
 }

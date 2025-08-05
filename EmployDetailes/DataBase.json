@@ -6,11 +6,6 @@
   },
   "Values": [
     {
-      "Id": null,
-      "Name": null,
-      "Age": null
-    },
-    {
       "Id": "101",
       "Name": "rohya",
       "Age": "33"
@@ -19,6 +14,27 @@
       "Id": "1212",
       "Name": "kkkkk",
       "Age": "23"
+    },
+    {
+      "Id": "909",
+      "Name": "happy",
+      "Age": "23"
+    },
+    {
+      "Id": "109",
+      "Name": "J karthik",
+      "Age": "24"
+    },
+    {
+      "Id": "1234",
+      "Name": "bhagya",
+      "Age": "24"
+    }
+  ],
+  "leave": [
+    {
+      "Id": "101",
+      "reason": "sick leave"
     }
   ]
 }

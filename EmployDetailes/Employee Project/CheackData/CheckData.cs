@@ -13,10 +13,11 @@ namespace EmployDetailes.Leave_Management
     {
         public void CheckData()
         {
-            string Data = File.ReadAllText(@"C:\Users\VSOFT\source\repos\EmployDetailes\EmployDetailes\DataBase.json");
+            Data dd = new Data();
+            string? raw = Environment.GetEnvironmentVariable("EmpRaw");
+            string path = raw ?? "default";
+            string Data = File.ReadAllText(path);
             Data d = JsonConvert.DeserializeObject<Data>(Data);
-
-            //Console.WriteLine(datamodal[0]);
             string EmpId = EmpLogin.Id(Console.ReadLine());
             foreach (var item in d.Values)
             {
@@ -24,7 +25,7 @@ namespace EmployDetailes.Leave_Management
                 {
                     Console.WriteLine("Name: " + item.Name + "\n" + "Age : " + item.Age);
                 }
-                //Console.WriteLine("Name: " + item.Name + "\n" + "Age : " + item.EmpAge);
+                
             }
         }
     }
