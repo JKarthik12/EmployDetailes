@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EmployDetailes.Employee_Project.LeaveData
 {
-    internal class Leave
+    public  class Leave
     {
         public bool ispresent = false;
 

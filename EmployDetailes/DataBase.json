@@ -1,19 +1,20 @@
 {
   "inputs": {
+    "Inputs": null,
     "EmpId": "Enter the Emp ID",
     "EmpName": "Enter the Name",
-    "EmpAge": "Enter the EMP Age"
+    "EmpAge": "Enter your Date of Birth (yyyy-MM-dd): "
   },
   "Values": [
     {
-      "Id": "101",
-      "Name": "rohya",
-      "Age": "33"
+      "Id": "103",
+      "Name": "hemanth",
+      "Age": "2000-12-12"
     },
     {
-      "Id": "102",
-      "Name": "prabhu",
-      "Age": "23"
+      "Id": "104",
+      "Name": "mahadeva",
+      "Age": "2002-05-02"
     }
   ],
   "leave": [

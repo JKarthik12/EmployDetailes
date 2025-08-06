@@ -40,7 +40,7 @@ namespace EmployDetailes.Employee_Project.EmployeLogin
             v.Name = EmpLogin.Name(Console.ReadLine());
 
             Console.WriteLine(dd.inputs.EmpAge);
-            v.Age = EmpLogin.Age(Console.ReadLine());
+            v.Age = EmpLogin.DOB(Console.ReadLine());
 
             DateTime dt = DateTime.Now;
             Console.WriteLine("Uploading date and time: " + dt);
@@ -60,7 +60,6 @@ namespace EmployDetailes.Employee_Project.EmployeLogin
             {
                 Console.WriteLine("Re-enter your data.");
             }
-
             dd.Values.Add(v);
 
             string final = JsonConvert.SerializeObject(dd, Formatting.Indented);
