@@ -10,6 +10,8 @@ namespace EmployDetailes.Employee_Project.LeaveData
 {
     internal class Leave
     {
+        public bool ispresent = false;
+
         public void RequesrLeave()
         {
             Data ll = new Data();
@@ -30,6 +32,11 @@ namespace EmployDetailes.Employee_Project.LeaveData
                      leaveDb.Id = item.Id;
                 }
             }
+            if (!ispresent)
+            {
+                Console.WriteLine("Enter valid ID Re-Enter");
+                RequesrLeave();
+            }
             String Datamodale;
             var Jsonloc = path;
             if (File.Exists(Jsonloc))
@@ -41,7 +48,6 @@ namespace EmployDetailes.Employee_Project.LeaveData
             {
                 Console.WriteLine("re enter");
             }
-
             ll.leave.Add(leaveDb);
             String leaveData = JsonConvert.SerializeObject(ll, Formatting.Indented);
             File.WriteAllText(Jsonloc, leaveData);

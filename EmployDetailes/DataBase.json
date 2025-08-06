@@ -12,41 +12,15 @@
       "Age": "33"
     },
     {
-      "Id": "001",
-      "Name": "karthik",
+      "Id": "102",
+      "Name": "prabhu",
       "Age": "23"
-    },
-    {
-      "Id": "11",
-      "Name": "mahadeva",
-      "Age": "35"
-    },
-    {
-      "Id": "00001",
-      "Name": "Naresh",
-      "Age": "55"
     }
   ],
   "leave": [
     {
       "Id": "101",
       "reason": "sick leave"
-    },
-    {
-      "Id": "11",
-      "reason": "feaver"
-    },
-    {
-      "Id": "00001",
-      "reason": "going to home Town"
-    },
-    {
-      "Id": "00001",
-      "reason": "iam not well"
-    },
-    {
-      "Id": "00001",
-      "reason": "sdfadgf"
     }
   ]
 }

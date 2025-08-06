@@ -21,7 +21,7 @@ namespace EmployDetailes
                 Console.SetCursorPosition(x, y);
                 Console.WriteLine(c);
                 x++;
-                Thread.Sleep(30); 
+                Thread.Sleep(10); 
             }
             string[] options = {
                 "Join the company",
@@ -81,8 +81,10 @@ namespace EmployDetailes
                     Console.WriteLine("Exiting...");
                     return;
             }
+
             Console.WriteLine("\nPress any key to exit...");
             Console.ReadKey();
+
         }
     }
 }

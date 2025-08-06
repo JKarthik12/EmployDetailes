@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,17 +14,27 @@ namespace EmployDetailes.Employee_Project.EmployeLogin
         public void login()
         {
             Data dd = new Data();
-            string? raw=Environment.GetEnvironmentVariable("EmpRaw");
+            string? raw = Environment.GetEnvironmentVariable("EmpRaw");
             string value = raw ?? "default";
+
             if (File.Exists(value))
             {
                 string data = File.ReadAllText(value);
                 dd = JsonConvert.DeserializeObject<Data>(data);
             }
+
             Db v = new Db();
 
-            Console.WriteLine(dd.inputs.EmpId);
-            v.Id = EmpLogin.Id(Console.ReadLine());
+            // ✅ Auto-generate EmpId
+            int newEmpId = 1;
+            if (dd.Values != null && dd.Values.Count > 0)
+            {
+                // Get the highest existing EmpId and increment
+                newEmpId = dd.Values.Max(emp => int.TryParse(emp.Id, out var id) ? id : 0) + 1;
+            }
+            v.Id = newEmpId.ToString();
+
+            Console.WriteLine("Generated Employee ID: "+ v.Id);
 
             Console.WriteLine(dd.inputs.EmpName);
             v.Name = EmpLogin.Name(Console.ReadLine());
@@ -32,13 +43,14 @@ namespace EmployDetailes.Employee_Project.EmployeLogin
             v.Age = EmpLogin.Age(Console.ReadLine());
 
             DateTime dt = DateTime.Now;
-            Console.WriteLine("uploding date and time is : " + dt);
-            Console.WriteLine("ID is : " + v.Id + "\n" + "name is : " + v.Name + "\n" + "age is : " + v.Age);
+            Console.WriteLine("Uploading date and time: " + dt);
+            Console.WriteLine("ID: " + v.Id + "\nName: " + v.Name + "\nAge: " + v.Age);
 
-            Console.WriteLine("congrats your data is uploded");
-            
-            String Datamodale;
-            var Jsonloc = value;
+            Console.WriteLine("Congrats, your data has been uploaded.");
+
+            string Jsonloc = value;
+            string Datamodale;
+
             if (File.Exists(Jsonloc))
             {
                 Datamodale = File.ReadAllText(Jsonloc);
@@ -46,15 +58,19 @@ namespace EmployDetailes.Employee_Project.EmployeLogin
             }
             else
             {
-                Console.WriteLine("re enter");
+                Console.WriteLine("Re-enter your data.");
             }
+
             dd.Values.Add(v);
-            String finl = JsonConvert.SerializeObject(dd, Formatting.Indented);
-            File.WriteAllText(Jsonloc, finl);
-            Console.WriteLine("Pleaas do not forget your ID");
+
+            string final = JsonConvert.SerializeObject(dd, Formatting.Indented);
+            File.WriteAllText(Jsonloc, final);
+
+            Console.WriteLine("Please do not forget your Employee ID!");
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
             Console.Clear();
+
             EmployeeMenu.Menu();
         }
     }
