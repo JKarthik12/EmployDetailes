@@ -9,11 +9,9 @@ namespace EmployDetailes.Company
 {
     public class Company
     {
-        
         public static void Main(string[] args)
         {
-            EmployeeMenu.Run();
-
+            EmployeeMenu.Menu();
         }
     }
 }

@@ -20,7 +20,7 @@ namespace EmployDetailes.Employee_Project.EmployeLogin
                 string data = File.ReadAllText(value);
                 dd = JsonConvert.DeserializeObject<Data>(data);
             }
-            db v = new db();
+            Db v = new Db();
 
             Console.WriteLine(dd.inputs.EmpId);
             v.Id = EmpLogin.Id(Console.ReadLine());
@@ -36,8 +36,8 @@ namespace EmployDetailes.Employee_Project.EmployeLogin
             Console.WriteLine("ID is : " + v.Id + "\n" + "name is : " + v.Name + "\n" + "age is : " + v.Age);
 
             Console.WriteLine("congrats your data is uploded");
+            
             String Datamodale;
-
             var Jsonloc = value;
             if (File.Exists(Jsonloc))
             {
@@ -48,7 +48,6 @@ namespace EmployDetailes.Employee_Project.EmployeLogin
             {
                 Console.WriteLine("re enter");
             }
-
             dd.Values.Add(v);
             String finl = JsonConvert.SerializeObject(dd, Formatting.Indented);
             File.WriteAllText(Jsonloc, finl);
@@ -56,7 +55,7 @@ namespace EmployDetailes.Employee_Project.EmployeLogin
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
             Console.Clear();
-            EmployeeMenu.Run();
+            EmployeeMenu.Menu();
         }
     }
 }

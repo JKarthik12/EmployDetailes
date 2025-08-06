@@ -11,11 +11,12 @@ namespace EmployDetailes.Leave_Management
 {
     public class CheckDetails
     {
+        public bool ispresent = false;
         public void CheckData()
         {
             Data dd = new Data();
-            string? raw = Environment.GetEnvironmentVariable("EmpRaw");
-            string path = raw ?? "default";
+            string raw = Environment.GetEnvironmentVariable("EmpRaw");
+            string path = raw;
             string Data = File.ReadAllText(path);
             Data d = JsonConvert.DeserializeObject<Data>(Data);
             string EmpId = EmpLogin.Id(Console.ReadLine());
@@ -23,14 +24,20 @@ namespace EmployDetailes.Leave_Management
             {
                 if (EmpId == item.Id)
                 {
+                    ispresent = true;
                     Console.WriteLine("Name: " + item.Name + "\n" + "Age : " + item.Age);
+                    Console.WriteLine("Press any key to Visit Menu agin...");
+                    Console.ReadKey();
+                    Console.Clear();
+                    EmployeeMenu.Menu();
                 }
                 
             }
-            Console.WriteLine("Press any key to continue...");
-            Console.ReadKey();
-            Console.Clear();
-            EmployeeMenu.Run();
+            if(!ispresent)
+            {
+                Console.WriteLine("Enter valid ID");
+                CheckData();
+            }
         }
     }
 }

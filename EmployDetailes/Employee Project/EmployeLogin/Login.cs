@@ -48,3 +48,4 @@ namespace EmployDetailes.NewFolder
         } 
     }
 }
+// This code defines a class `EmpLogin` with static methods to validate employee ID, name, and age inputs.

@@ -9,7 +9,7 @@ namespace EmployDetailes
     public class Datamodal
     
         {
-        public List<Datamodal>? Inputs { get; set; }
+        public List<Datamodal>? Inputs;
         public string? EmpId;
         public string? EmpName;
         public string? EmpAge;

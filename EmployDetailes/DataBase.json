@@ -1,9 +1,9 @@
 {
   "inputs": {
+    "Inputs": null,
     "EmpId": "Enter the Emp ID",
     "EmpName": "Enter the Name",
-    "EmpAge": "Enter the EMP Age",
-    "Inputs": null
+    "EmpAge": "Enter the EMP Age"
   },
   "Values": [
     {
@@ -12,54 +12,19 @@
       "Age": "33"
     },
     {
-      "Id": "1212",
-      "Name": "kkkkk",
+      "Id": "001",
+      "Name": "karthik",
       "Age": "23"
     },
     {
-      "Id": "909",
-      "Name": "happy",
-      "Age": "23"
+      "Id": "11",
+      "Name": "mahadeva",
+      "Age": "35"
     },
     {
-      "Id": "109",
-      "Name": "J karthik",
-      "Age": "24"
-    },
-    {
-      "Id": "1234",
-      "Name": "bhagya",
-      "Age": "24"
-    },
-    {
-      "Id": "1001",
-      "Name": "ramprasad",
-      "Age": "24"
-    },
-    {
-      "Id": "1002",
-      "Name": "papu",
-      "Age": "23"
-    },
-    {
-      "Id": "1003",
-      "Name": "daada",
-      "Age": "23"
-    },
-    {
-      "Id": "1004",
-      "Name": "damadam",
-      "Age": "24"
-    },
-    {
-      "Id": "1005",
-      "Name": "243",
-      "Age": "12"
-    },
-    {
-      "Id": "1006",
-      "Name": "pop",
-      "Age": "45"
+      "Id": "00001",
+      "Name": "Naresh",
+      "Age": "55"
     }
   ],
   "leave": [
@@ -68,8 +33,20 @@
       "reason": "sick leave"
     },
     {
-      "Id": "1001",
+      "Id": "11",
+      "reason": "feaver"
+    },
+    {
+      "Id": "00001",
+      "reason": "going to home Town"
+    },
+    {
+      "Id": "00001",
       "reason": "iam not well"
+    },
+    {
+      "Id": "00001",
+      "reason": "sdfadgf"
     }
   ]
 }

@@ -11,8 +11,18 @@ namespace EmployDetailes
 {
     public class EmployeeMenu
     {
-        public static void Run()
+        public static void Menu()
         {
+            int x = 30;
+            int y = 10;
+            foreach(
+                char c in "Welcome to the Employee Management System")
+            {
+                Console.SetCursorPosition(x, y);
+                Console.WriteLine(c);
+                x++;
+                Thread.Sleep(30); 
+            }
             string[] options = {
                 "Join the company",
                 "View details",
@@ -21,14 +31,15 @@ namespace EmployDetailes
             };
             int selectedIndex = 0;
             ConsoleKey key;
+            Console.SetCursorPosition(30, 11);
             Console.WriteLine("Use UP and DOWN arrows to navigate and Enter to select:\n");
             int menuTop = Console.CursorTop;
             do
             {
-                Console.SetCursorPosition(0, menuTop);
+                Console.SetCursorPosition(30, menuTop);
                 for (int i = 0; i < options.Length; i++)
                 {
-                    Console.SetCursorPosition(0, menuTop + i);
+                    Console.SetCursorPosition(30, menuTop + i);
                     Console.ForegroundColor = i == selectedIndex ? ConsoleColor.Red : ConsoleColor.Yellow;
                     string prefix = i == selectedIndex ? "→ " : "  ";
                     string paddedText = prefix + options[i] + new string(' ', Console.WindowWidth - prefix.Length - options[i].Length);
@@ -46,15 +57,12 @@ namespace EmployDetailes
                 }
             }
             while (key != ConsoleKey.Enter);
-            Console.ResetColor();
             Console.Clear();
             while (key != ConsoleKey.Enter) ;
-            Console.ResetColor();
             Console.Clear();
             Logindata log = new Logindata();
             CheckDetails Chkdata = new CheckDetails();
             Leave leave = new Leave();
-
             switch (selectedIndex)
             {
                 case 0:
