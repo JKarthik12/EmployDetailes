@@ -81,10 +81,8 @@ namespace EmployDetailes
                     Console.WriteLine("Exiting...");
                     return;
             }
-
             Console.WriteLine("\nPress any key to exit...");
             Console.ReadKey();
-
         }
     }
 }
