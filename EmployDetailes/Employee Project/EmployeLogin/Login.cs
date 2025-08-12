@@ -35,7 +35,7 @@ namespace EmployDetailes.NewFolder
 
         public static string DOB(string EmpDOB)
         {
-            // Accepting format as yyyy-MM-dd
+            
             DateTime dob;
             bool isValid = DateTime.TryParseExact(EmpDOB, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out dob);
 
@@ -45,7 +45,6 @@ namespace EmployDetailes.NewFolder
                 return DOB(Console.ReadLine());
             }
 
-            // Optional: prevent future dates
             if (dob > DateTime.Today)
             {
                 Console.WriteLine("DOB cannot be in the future. Please enter a valid date.");

@@ -1,11 +1,5 @@
 ﻿using EmployDetailes.NewFolder;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EmployDetailes.Employee_Project.EmployeLogin
 {
@@ -32,7 +26,7 @@ namespace EmployDetailes.Employee_Project.EmployeLogin
             }
             v.Id = newEmpId.ToString();
 
-            Console.WriteLine("Generated Employee ID: "+ v.Id);
+            Console.WriteLine("Generated Employee ID: " + v.Id);
 
             Console.WriteLine(dd.inputs.EmpName);
             v.Name = EmpLogin.Name(Console.ReadLine());
